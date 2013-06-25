@@ -1,0 +1,35 @@
+COP 5615:Distributed Operating Systems
+         Project1 Report
+                                         -Mohan RamKarthik Selvamoorthy
+                                                         UFID:0389-3096
+
+Manner of Code Development
+
+      Started out with finding a way to read properties file to main via Properties Object. Next gained an understanding of Semaphores and Synchronization and implemented a Semaphore Class containing shared semaphore variable and synchronized P() and V() methods. 
+     
+      Explored Java Multithreading concepts and proceeded by implementing Process Class which extends Thread class and stores SleepTime, OpTime, n and m  as private members in addition to static members for managing UnixTime and String Buffers for Output.Implemented run() method with tracking of semaphore acquisition and release, and simulation of SleepTime and Optime, while building Output String.
+     
+      Handled Mapping of Process Index to exact Semaphore Indexes for calling and releasing semaphores up and down Process Tree. Worked on Process Output formatting and Level identification and finally, ensured checking of Edge-cases and Exception Handling on all calls to wait() and notify(). Wrote Output to event.log file using BufferedWriter.
+
+      Code and files were Tested with given shell scripts, and by changing values of system.properties file. 
+
+Difficulties Faced
+
+      Implementing of P() and V() methods while ensuring maintaining of semaphore within 0/1 binary value range and finding a way to keep track of waiting processes took some careful coding. Proper try-catch mechanism was also set up on checking.
+
+      Writing run() method and building Output String, required attention to Edgecases, process-to-semaphores mapping and count, as well as maintaining state via static data members. Involved fixing initialization errors.
+      
+      Passing Starting UnixTime from calling main() to the Process Class was handled, by implementing static long variable within the class.
+
+Learning Outcomes
+
+   -   Properties-File based Input Handling.
+      
+   -   Synchronization primitives for P() and V() based semaphore signaling using wait() and notify().
+ 
+   -   Multiple-thread handling, Thread tree-structuring, Semaphore Mapping and Manipulation.
+
+   -   UnixTime Handling.
+
+   -   StringBuffer based Output Handling.
+
